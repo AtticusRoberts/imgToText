@@ -5,9 +5,12 @@ String[] chars;
 int[] charVals;
 String[][] total;
 void setup() {
-  pic = loadImage("heh.png");
+  pic = loadImage("heh.png"); //To change the image, change what's in the quotes to the name of the image you want to convert.
+  //Make sure that the image is in the same folder as the code, or else it won't work. 
   size(500,450);
-  scl = 8;
+  scl = 8; //This is how to control how big the characters are and how focused the image is. With a scl variable of 8-10, the 
+  //image will be sort of blurry, but the characters will be very visable. With a scl of 4-6, the image is focused, but it's hard
+  //to see that it's actually made up of characters. Mess around with this to find a value that's right for your picture
   total=new String[pic.height/scl][pic.width/scl];
   charDict = new IntDict();
   charDict.set("~",0);
@@ -47,7 +50,6 @@ void setup() {
   charDict.set("#",0);
   charVals=charDict.valueArray();
   chars=charDict.keyArray();
-  //image(pic,0,0);
   averagePix();
 
 }
